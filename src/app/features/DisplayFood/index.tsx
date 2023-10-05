@@ -1,10 +1,11 @@
 import { useEffect, useState, Fragment } from "react";
-import Card from "@/app/components/Card";
+
 import { getAllMeals } from "@/app/services/getAllMeals";
 import { foodSections } from "@/app/static/foodHome";
 import { ICategory } from "@/types/mealType";
+import { Card, LoadingDots } from "@/app/components";
 
-export default function DisplayFood() {
+export function DisplayFood() {
   const [foods, setFoods] = useState(foodSections);
   const [isLoading, setLoading] = useState(true);
 
@@ -39,11 +40,7 @@ export default function DisplayFood() {
       {foods.map(({ sectionTitle, items }) => (
         <Fragment key={sectionTitle}>
           <h1 className="text-2xl p-8 font-bold text-center">{sectionTitle}</h1>
-          {isLoading && (
-            <div className="flex justify-center items-center">
-              <span className="loading loading-dots loading-md"></span>
-            </div>
-          )}
+          {isLoading && <LoadingDots />}
           <div className="grid grid-cols-1 lg:grid-cols-3 xs:grid-cols-2 gap-10 justify-items-center">
             {items.map(
               ({

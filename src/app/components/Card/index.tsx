@@ -5,7 +5,7 @@ interface ITitle {
   content?: string;
   image: string;
 }
-export default function Card({ content, title, image }: ITitle) {
+export function Card({ content, title, image }: ITitle) {
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl bg-[#567B96]">
       <figure>

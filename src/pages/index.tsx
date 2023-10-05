@@ -1,6 +1,6 @@
-import Hero from "@/app/components/Hero";
-import Layout from "@/app/components/Layout";
-import DisplayFood from "@/app/features/DisplayFood";
+import { Hero, Layout } from "@/app/components";
+import { DisplayFood } from "@/app/features";
+
 import "@/styles/globals.css";
 
 export default function Home() {

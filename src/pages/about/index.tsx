@@ -1,4 +1,4 @@
-import Layout from "@/app/components/Layout";
+import { Layout } from "@/app/components";
 import "@/styles/globals.css";
 
 export default function About() {

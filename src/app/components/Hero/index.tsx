@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import foodPhoto from "../../../assets/images/hero-food.jpg";
 
-export default function Hero() {
+export function Hero() {
   return (
     <>
       <div

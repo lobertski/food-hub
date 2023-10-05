@@ -6,6 +6,7 @@ import { ICategory } from "@/types/mealType";
 
 export default function DisplayFood() {
   const [foods, setFoods] = useState(foodSections);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const getFood = async () => {
@@ -27,6 +28,7 @@ export default function DisplayFood() {
           return item;
         });
       });
+      setLoading(false);
     };
 
     getFood();
@@ -37,6 +39,11 @@ export default function DisplayFood() {
       {foods.map(({ sectionTitle, items }) => (
         <Fragment key={sectionTitle}>
           <h1 className="text-2xl p-8 font-bold text-center">{sectionTitle}</h1>
+          {isLoading && (
+            <div className="flex justify-center items-center">
+              <span className="loading loading-dots loading-md"></span>
+            </div>
+          )}
           <div className="grid grid-cols-1 lg:grid-cols-3 xs:grid-cols-2 gap-10 justify-items-center">
             {items.map(
               ({

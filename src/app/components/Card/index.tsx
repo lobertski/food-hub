@@ -13,6 +13,7 @@ export default function Card({ content, title, image }: ITitle) {
           src={image}
           alt={title}
           style={{ width: "384px", height: "290px" }}
+          className="transition duration-300 ease-in-out hover:scale-110"
         />
       </figure>
       <div className="card-body">

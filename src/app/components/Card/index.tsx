@@ -7,7 +7,7 @@ interface ITitle {
 }
 export function Card({ content, title, image }: ITitle) {
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl bg-[#567B96]">
+    <div className="card card-compact w-96 bg-base-100 shadow-xl bg-[#4A1E1D]">
       <figure>
         <img
           src={image}
@@ -17,10 +17,12 @@ export function Card({ content, title, image }: ITitle) {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
+        <h2 className="text-[#BD988A] card-title">{title}</h2>
         {content && <p>{content}</p>}
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Click here</button>
+          <button className="btn btn-primary bg-[#452E1F] text-[#BD988A] focus:outline-[#C4A78B] hover:bg-[#6D4C3B]">
+            Click here
+          </button>
         </div>
       </div>
     </div>

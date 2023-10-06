@@ -36,12 +36,14 @@ export function DisplayFood() {
   }, []);
 
   return (
-    <div className="p-4 bg-[#292420]">
+    <div className="p-4 bg-[#563927]">
       {foods.map(({ sectionTitle, items }) => (
         <Fragment key={sectionTitle}>
-          <h1 className="text-2xl p-8 font-bold text-center">{sectionTitle}</h1>
+          <h1 className="text-[#BD988A] text-3xl py-12 font-bold text-center">
+            {sectionTitle}
+          </h1>
           {isLoading && <LoadingDots />}
-          <div className="grid grid-cols-1 lg:grid-cols-3 xs:grid-cols-2 gap-10 justify-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 xs:grid-cols-2 gap-10 mx-auto mb-6 max-w-[100em]">
             {items.map(
               ({
                 idCategory,
